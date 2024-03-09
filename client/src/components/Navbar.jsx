@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import useQuery from '../hooks/query'
+import useQueryParams from '../hooks/useQueryParams'
 
 function Navbar () {
   const navigate = useNavigate()
-  const { query } = useQuery()
+  const { query } = useQueryParams()
   const [search, setSearch] = useState(query || '')
 
   const handleChange = (event) => {

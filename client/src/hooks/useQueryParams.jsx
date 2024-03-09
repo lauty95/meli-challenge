@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom'
 
-function useQuery () {
+function useQueryParams () {
   const [searchParams] = useSearchParams()
   const query = searchParams.get('q')
   return {
@@ -8,4 +8,4 @@ function useQuery () {
   }
 }
 
-export default useQuery
+export default useQueryParams

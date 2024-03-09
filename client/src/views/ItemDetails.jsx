@@ -32,7 +32,7 @@ function ItemDetails () {
           {item?.condition === 'new' ? 'Nuevo' : 'Usado'} - {item?.sold_quantity} vendidos
         </span>
         <h2>{item?.title}</h2>
-        <h1>$ {priceFormatter(item.price.amount)}</h1>
+        <h1>$ {priceFormatter(item?.price.amount)}</h1>
         <div className='btn-primary'>Comprar</div>
       </section>
     </div>

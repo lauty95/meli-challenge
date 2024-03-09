@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { itemsMeli } from '../configs/axiosConfig'
 import ItemList from '../components/ItemList'
-import useQuery from '../hooks/query'
-
+import useQueryParams from '../hooks/useQueryParams'
+import { useSelector } from 'react-redux'
+import useItemsActions from '../hooks/useItemsActions'
 const PRODUCTS_LIMITS = 4
 
 function ItemsResult () {
-  const { query } = useQuery()
-  const [items, setItems] = useState([])
+  const { query } = useQueryParams()
+  const { setItems } = useItemsActions()
+  const items = useSelector((state) => state.items.list)
 
   useEffect(() => {
     if (query) {
