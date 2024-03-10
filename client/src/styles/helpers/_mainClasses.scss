@@ -96,8 +96,8 @@ $margin-padding: (
 }
 
 .container {
-    width: 90vh;
-    max-width: 1180px;
+    width: 90vw;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
 
@@ -118,4 +118,14 @@ $margin-padding: (
 
 .flex-column {
     flex-direction: column;
+}
+
+.btn-primary {
+    background-color: variables.$button-color;
+    border-radius: 4px;
+    height: 40px;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    @include mixins.crear-flexbox
 }

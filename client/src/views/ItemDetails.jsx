@@ -26,18 +26,20 @@ function ItemDetails () {
       <Breadcrumb />
       <section className='container'>
         <div className='card'>
-          <section className='details-section'>
+          <section className='details-section d-flex'>
             <img src={item?.picture} alt={item?.title} />
-            <h2>Descripción del producto</h2>
-            <p>{item?.description}</p>
+            <div className='details-price mt-1 mr-1'>
+              <span>
+                {item?.condition === 'new' ? 'Nuevo' : 'Usado'} - {item?.sold_quantity} vendidos
+              </span>
+              <h3 className='mt-1 mb-1'>{item?.title}</h3>
+              <h1 className='mt-1 mb-2 d-flex'>{priceFormatter(item?.price.amount)}<span className='details-decimals'>{item?.price.decimals}</span></h1>
+              <div className='btn-primary'>Comprar</div>
+            </div>
           </section>
-          <section className='details-price'>
-            <span className='mb-1'>
-              {item?.condition === 'new' ? 'Nuevo' : 'Usado'} - {item?.sold_quantity} vendidos
-            </span>
-            <h3>{item?.title}</h3>
-            <h1>$ {priceFormatter(item?.price.amount)}</h1>
-            <div className='btn-primary'>Comprar</div>
+          <section className='details-description ml-1'>
+            <h2 className='mb-2'>Descripción del producto</h2>
+            <p className='mb-2'>{item?.description}</p>
           </section>
         </div>
       </section>

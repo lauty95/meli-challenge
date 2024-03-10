@@ -1,0 +1,22 @@
+.details-section {
+    justify-content: space-between;
+    & img {
+        width: 680px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}
+
+.details-price {
+    width: 300px;
+}
+
+.details-decimals {
+    margin-top: 8px;
+}
+
+.details-description {
+    max-width: 900px;
+}

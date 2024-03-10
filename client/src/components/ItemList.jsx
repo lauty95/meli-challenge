@@ -13,7 +13,7 @@ function ItemList ({ item }) {
         </Link>
         <div className='query-details'>
           <h3 className='query-price mt-2 mb-2'>
-            $ {priceFormatter(item.price.amount)}
+            {priceFormatter(item.price.amount)}
           </h3>
           {item.free_shipping && <div className='query-available' />}
           <h4 className='query-title'>
