@@ -9,7 +9,7 @@ function App () {
     <main>
       <Navbar />
       <Routes>
-        <Route path='/' />
+        <Route path='/' element={<></>} />
         <Route path='/items' element={<ItemsResult />} />
         <Route path='/items/:id' element={<ItemDetails />} />
         <Route path='*' element={<h1>Página no existente</h1>} />

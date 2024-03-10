@@ -1,8 +1,6 @@
 import { Router } from 'express'
 import { getDecimals } from '../helpers/index.js'
-import axios from 'axios'
-
-const API_URL = 'https://api.mercadolibre.com/'
+import { apiItemsDetail, apiSearchItems } from '../configs/axiosConfig.js'
 
 const router = Router()
 
@@ -12,8 +10,8 @@ router.get('/items/:id', async (req, res) => {
     return res.status(400).json({ error: true, descripcion: 'Sin item id' })
   }
   try {
-    const itemData = await axios.get(`${API_URL}/items/${itemId}`)
-    const descriptionData = await axios.get(`${API_URL}/items/${itemId}/description`)
+    const itemData = await apiItemsDetail.get(`/${itemId}`)
+    const descriptionData = await apiItemsDetail.get(`/${itemId}/description`)
     const response = {
       author: {
         name: 'Lautaro',
@@ -48,7 +46,7 @@ router.get('/items', async (req, res) => {
   }
 
   try {
-    const { data } = await axios.get(`${API_URL}/sites/MLA/search?q=${search}`)
+    const { data } = await apiSearchItems.get(`/search?q=${search}`)
 
     const items = data.results.map((result) => {
       return {
@@ -65,7 +63,7 @@ router.get('/items', async (req, res) => {
       }
     })
 
-    const categoriesValues = data.filters[0].values.map((value) => value)
+    const categoriesValues = data.filters[0]?.values.map((value) => value) || []
 
     const categories = categoriesValues.map((value) => value.path_from_root.map((category) => category.name))
 
