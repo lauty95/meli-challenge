@@ -32,11 +32,13 @@ function ItemsResult () {
     <>
       <Breadcrumb />
       <div className='container'>
-        {
+        <div className='card d-flex flex-column p-2'>
+          {
         items?.length > 0
           ? items.map(item => <ItemList item={item} key={item.id} />)
           : 'No'
     }
+        </div>
       </div>
     </>
   )

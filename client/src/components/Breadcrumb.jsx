@@ -5,10 +5,10 @@ function Breadcrumb () {
   const categories = useSelector((state) => state.items.categories)
 
   return (
-    <div className='container'>
-      {
-        categories.map(category => category.join(' > '))
-      }
+    <div className='container mt-1 mb-1' style={{ color: '#999999' }}>
+      <span>
+        {categories.map(category => category.join(' > '))}
+      </span>
     </div>
   )
 }

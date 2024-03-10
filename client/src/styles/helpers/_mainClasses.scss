@@ -1,0 +1,102 @@
+@use 'variables';
+@use 'mixins';
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+    font-family: variables.$font-family;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 46px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+    color: variables.$p-color;
+}
+
+span {
+    font-size: 14px;
+}
+
+// Función para generar clases de margen y padding
+@function generate-margin-classes($property, $direction) {
+    $class-map: (
+    );
+
+@each $value in variables.$margin-sizes {
+    $index: index(variables.$margin-sizes, $value);
+    $class: ".#{$direction}-#{$index}";
+    $styles: (
+        #{$property}: #{$value}px
+    );
+$class-map: map-merge($class-map, ($class: $styles));
+}
+
+@return $class-map;
+}
+
+// Generar clases de margen
+$margin-classes: generate-margin-classes('margin', 'm');
+$margin-top-classes: generate-margin-classes('margin-top', 'mt');
+$margin-bottom-classes: generate-margin-classes('margin-bottom', 'mb');
+$margin-left-classes: generate-margin-classes('margin-left', 'ml');
+$margin-right-classes: generate-margin-classes('margin-right', 'mr');
+
+// Generar clases de padding
+$padding-classes: generate-margin-classes('padding', 'p');
+$padding-top-classes: generate-margin-classes('padding-top', 'pt');
+$padding-bottom-classes: generate-margin-classes('padding-bottom', 'pb');
+$padding-left-classes: generate-margin-classes('padding-left', 'pl');
+$padding-right-classes: generate-margin-classes('padding-right', 'pr');
+
+@each $classes in ($margin-classes, $margin-top-classes, $margin-bottom-classes, $margin-left-classes, $margin-right-classes) {
+    @each $class, $styles in $classes {
+        #{$class} {
+            @each $property, $value in $styles {
+                #{$property}: $value;
+            }
+        }
+    }
+}
+
+.container {
+    width: 90vh;
+    max-width: 1180px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+        width: 85%;
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 4px;
+}
+
+.d-flex {
+    @include mixins.crear-flexbox;
+}
+
+.flex-column {
+    flex-direction: column;
+}

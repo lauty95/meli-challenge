@@ -11,13 +11,13 @@ function ItemList ({ item }) {
         </div>
       </Link>
       <div className='query-details'>
-        <span className='query-price'>
+        <h3 className='query-price'>
           $ {priceFormatter(item.price.amount)}
-        </span>
+        </h3>
         {item.free_shipping && <div className='query-available' />}
-        <p className='query-title'>
+        <h4 className='query-title'>
           {item.title}
-        </p>
+        </h4>
       </div>
       <div className='query-zone'>
         <span>Buenos Aires</span>

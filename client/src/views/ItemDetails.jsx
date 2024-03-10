@@ -31,10 +31,10 @@ function ItemDetails () {
           <p>{item?.description}</p>
         </section>
         <section className='details-price'>
-          <span>
+          <span className='mb-1'>
             {item?.condition === 'new' ? 'Nuevo' : 'Usado'} - {item?.sold_quantity} vendidos
           </span>
-          <h2>{item?.title}</h2>
+          <h3>{item?.title}</h3>
           <h1>$ {priceFormatter(item?.price.amount)}</h1>
           <div className='btn-primary'>Comprar</div>
         </section>
