@@ -18,6 +18,8 @@ input[type="search"]::-webkit-search-results-decoration {
 .container {
     width: 90vh;
     max-width: 1180px;
+    margin-right: auto;
+    margin-left: auto;
 
     @media (max-width: 768px) {
         width: 85%;

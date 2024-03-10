@@ -24,7 +24,7 @@ function ItemDetails () {
   return (
     <>
       <Breadcrumb />
-      <div className='details-card'>
+      <div className='details-card container'>
         <section className='details-section'>
           <img src={item?.picture} alt={item?.title} />
           <h2>Descripción del producto</h2>

@@ -29,14 +29,16 @@ function ItemsResult () {
   }, [query])
 
   return (
-    <div>
+    <>
       <Breadcrumb />
-      {
+      <div className='container'>
+        {
         items?.length > 0
           ? items.map(item => <ItemList item={item} key={item.id} />)
           : 'No'
     }
-    </div>
+      </div>
+    </>
   )
 }
 

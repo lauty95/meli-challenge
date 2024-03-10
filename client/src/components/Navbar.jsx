@@ -34,7 +34,7 @@ function Navbar () {
             onChange={handleChange}
             value={search}
           />
-          <img src='assets/ic_Search@2x.png' alt='Buscar' onClick={handleSubmit} />
+          <img src='/assets/ic_Search@2x.png' alt='Buscar' onClick={handleSubmit} />
         </form>
       </div>
     </nav>

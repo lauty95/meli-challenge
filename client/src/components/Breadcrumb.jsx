@@ -5,7 +5,7 @@ function Breadcrumb () {
   const categories = useSelector((state) => state.items.categories)
 
   return (
-    <div>
+    <div className='container'>
       {
         categories.map(category => category.join(' > '))
       }
