@@ -5,6 +5,7 @@ import { itemsMeli } from '../configs/axiosConfig'
 import ItemList from '../components/ItemList'
 import useQueryParams from '../hooks/useQueryParams'
 import Breadcrumb from '../components/Breadcrumb'
+import Line from '../components/Line'
 
 const PRODUCTS_LIMITS = 4
 
@@ -31,15 +32,16 @@ function ItemsResult () {
   return (
     <>
       <Breadcrumb />
-      <div className='container'>
+      <section className='container'>
         <div className='card d-flex flex-column p-2'>
-          {
-        items?.length > 0
-          ? items.map(item => <ItemList item={item} key={item.id} />)
-          : 'No'
-    }
+          {items?.length > 0 &&
+            items.map((item, index) =>
+              <React.Fragment key={item.id}>
+                <ItemList item={item} />
+                {index !== items.length - 1 && <Line />}
+              </React.Fragment>)}
         </div>
-      </div>
+      </section>
     </>
   )
 }

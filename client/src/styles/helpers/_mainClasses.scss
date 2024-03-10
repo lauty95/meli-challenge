@@ -13,23 +13,28 @@ span {
 
 h1 {
     font-size: 46px;
+    margin: 0;
 }
 
 h2 {
     font-size: 28px;
+    margin: 0;
 }
 
 h3 {
     font-size: 24px;
+    margin: 0;
 }
 
 h4 {
     font-size: 18px;
+    margin: 0;
 }
 
 p {
     font-size: 16px;
     color: variables.$p-color;
+    margin: 0;
 }
 
 span {
@@ -67,7 +72,20 @@ $padding-bottom-classes: generate-margin-classes('padding-bottom', 'pb');
 $padding-left-classes: generate-margin-classes('padding-left', 'pl');
 $padding-right-classes: generate-margin-classes('padding-right', 'pr');
 
-@each $classes in ($margin-classes, $margin-top-classes, $margin-bottom-classes, $margin-left-classes, $margin-right-classes) {
+$margin-padding: (
+    $margin-classes,
+    $margin-top-classes,
+    $margin-bottom-classes,
+    $margin-left-classes,
+    $margin-right-classes,
+    $padding-classes,
+    $padding-top-classes,
+    $padding-bottom-classes,
+    $padding-left-classes,
+    $padding-right-classes
+);
+
+@each $classes in $margin-padding {
     @each $class, $styles in $classes {
         #{$class} {
             @each $property, $value in $styles {
@@ -90,11 +108,12 @@ $padding-right-classes: generate-margin-classes('padding-right', 'pr');
 
 .card {
     background-color: white;
+    padding: 16px;
     border-radius: 4px;
 }
 
 .d-flex {
-    @include mixins.crear-flexbox;
+    display: flex;
 }
 
 .flex-column {

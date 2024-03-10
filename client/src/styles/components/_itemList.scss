@@ -1,5 +1,26 @@
+@use '../helpers/variables';
+
 .query-img {
     & img {
         border-radius: 4px;
+        height: 180px;
+        width: 180px;
+    }
+}
+
+.query-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.query-title {
+    max-width: 400px;
+}
+
+.query-zone {
+    padding-top: 32px;
+    & span {
+        color: variables.$p-color;
     }
 }

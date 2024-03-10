@@ -24,21 +24,23 @@ function ItemDetails () {
   return (
     <>
       <Breadcrumb />
-      <div className='details-card container'>
-        <section className='details-section'>
-          <img src={item?.picture} alt={item?.title} />
-          <h2>Descripción del producto</h2>
-          <p>{item?.description}</p>
-        </section>
-        <section className='details-price'>
-          <span className='mb-1'>
-            {item?.condition === 'new' ? 'Nuevo' : 'Usado'} - {item?.sold_quantity} vendidos
-          </span>
-          <h3>{item?.title}</h3>
-          <h1>$ {priceFormatter(item?.price.amount)}</h1>
-          <div className='btn-primary'>Comprar</div>
-        </section>
-      </div>
+      <section className='container'>
+        <div className='card'>
+          <section className='details-section'>
+            <img src={item?.picture} alt={item?.title} />
+            <h2>Descripción del producto</h2>
+            <p>{item?.description}</p>
+          </section>
+          <section className='details-price'>
+            <span className='mb-1'>
+              {item?.condition === 'new' ? 'Nuevo' : 'Usado'} - {item?.sold_quantity} vendidos
+            </span>
+            <h3>{item?.title}</h3>
+            <h1>$ {priceFormatter(item?.price.amount)}</h1>
+            <div className='btn-primary'>Comprar</div>
+          </section>
+        </div>
+      </section>
     </>
   )
 }
