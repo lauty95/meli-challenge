@@ -1,0 +1,57 @@
+@use '../helpers/variables.scss';
+@use '../helpers/mixins';
+
+nav {
+    background-color: variables.$primary-color;
+    @include mixins.crear-flexbox;
+    height: 60px;
+
+    & .logo-ml {
+        background: {
+            image: url('assets/Logo_ML@2x.png');
+            repeat: no-repeat;
+            size: contain;
+            position: center;
+        }
+
+        ;
+        height: 40px;
+        width: 70px;
+        cursor: pointer;
+
+        @media (max-width: 768px) {
+            background-image: url('assets/Logo_ML.png');
+        }
+
+    }
+
+    & .container {
+        @include mixins.crear-flexbox(space-between)
+    }
+
+    & form {
+        width: 100%;
+        @include mixins.crear-flexbox
+    }
+
+    & input {
+        width: 100%;
+        height: 40px;
+        border-radius: 4px 0 0 4px;
+        border: 0px;
+        margin-left: 20px;
+        padding-left: 10px;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    & img {
+        background-color: variables.$background-color;
+        height: 20px;
+        padding: 10px;
+        border-radius: 0px 4px 4px 0px;
+        cursor: pointer;
+    }
+}

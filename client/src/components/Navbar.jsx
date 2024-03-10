@@ -12,20 +12,31 @@ function Navbar () {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    navigate(`/items?q=${search}`)
+    if (search) {
+      event.preventDefault()
+      navigate(`/items?q=${search}`)
+    }
+  }
+
+  const goHome = () => {
+    navigate('/')
+    setSearch('')
   }
 
   return (
     <nav>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='search'
-          placeholder='Nunca dejes de buscar'
-          onChange={handleChange}
-          value={search}
-        />
-      </form>
+      <div className='container'>
+        <div className='logo-ml' onClick={goHome} />
+        <form onSubmit={handleSubmit}>
+          <input
+            type='search'
+            placeholder='Nunca dejes de buscar'
+            onChange={handleChange}
+            value={search}
+          />
+          <img src='assets/ic_Search@2x.png' alt='Buscar' onClick={handleSubmit} />
+        </form>
+      </div>
     </nav>
   )
 }
