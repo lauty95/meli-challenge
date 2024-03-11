@@ -2,6 +2,7 @@
 
 ## Cómo levantar el proyecto
 
+* Recomendable contar con node: '>=18.0.0', npm: '>=8.0.0'
 * Clonar el repositorio
 * Instalar las dependencias de `api/` y de `client/`
 * Levantar los servicios con `npm start` e ingresar a `http://localhost:5173`
