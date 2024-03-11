@@ -15,6 +15,8 @@ function Navbar () {
     if (search) {
       event.preventDefault()
       navigate(`/items?q=${search}`)
+    } else {
+      navigate('/')
     }
   }
 

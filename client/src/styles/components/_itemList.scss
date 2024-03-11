@@ -20,7 +20,20 @@
 
 .query-zone {
     padding-top: 32px;
+
     & span {
         color: variables.$p-color;
     }
+}
+
+.query-available {
+    // width: 36px;
+    // height: 36px;
+    // background-image: url('/assets/ic_shipping@2x.png');
+
+    // @media (max-width: 768px) {
+    width: 18px;
+    height: 18px;
+    background-image: url('/assets/ic_shipping.png');
+    // }
 }

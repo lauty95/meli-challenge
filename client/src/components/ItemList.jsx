@@ -1,5 +1,5 @@
 import React from 'react'
-import { priceFormatter } from '../../helpers'
+import { priceFormatter } from '../helpers'
 import { Link } from 'react-router-dom'
 
 function ItemList ({ item }) {
@@ -12,10 +12,10 @@ function ItemList ({ item }) {
           </div>
         </Link>
         <div className='query-details'>
-          <h3 className='query-price mt-2 mb-2'>
-            {priceFormatter(item.price.amount)}
+          <h3 className='query-price mt-2 mb-2 d-flex'>
+            {priceFormatter(item.price.amount.toFixed(0))}
+            {item.free_shipping && <div className='query-available ml-1' />}
           </h3>
-          {item.free_shipping && <div className='query-available' />}
           <h4 className='query-title'>
             {item.title}
           </h4>
