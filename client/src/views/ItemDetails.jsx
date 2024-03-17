@@ -24,7 +24,7 @@ function ItemDetails () {
   return (
     <>
       <Breadcrumb />
-      <section className='container'>
+      <section className='container mb-3'>
         <div className='card'>
           {(item !== null)
             ? (item?.error)

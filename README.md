@@ -18,9 +18,7 @@
 ```
 
 ```bash
-    # Consola 1
-    git clone https://github.com/lauty95/meli-challenge.git
-    cd meli-challenge
+    # Consola 2 / desde el root (meli-challenge)
     cd client
     npm i
     npm start
@@ -149,6 +147,11 @@ Un cliente realizado con <b>HTML React JS y Sass</b> en `client/`
 
 - En `src/hooks` se creó un custom hook para obtener el query param para hacer el llamado, este hook se creó para no repetir código en `ItemsResult.jsx` y en `Navbar.jsx`. En el primer caso se usó para tomar de la URL lo que se desea buscar y en Navbar para setear el estado local de lo que se escriba en la caja de búsqueda (pensando en que si se recarga la página también lo pueda tomar)
 
+### Rutas
+
+El front cuenta con la libreria `react-router-dom`.
+
+En el `main.js` se envuelve la App con 'BrowserRouter' y las configuraciones de rutas se encuentran en `src/App.jsx`
 
 ## Configuraciones generales
 

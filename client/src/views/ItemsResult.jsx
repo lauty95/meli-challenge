@@ -32,7 +32,7 @@ function ItemsResult () {
   return (
     <>
       <Breadcrumb />
-      <section className='container'>
+      <section className='container mb-3'>
         <div className='card d-flex flex-column p-2'>
           {items?.length > 0 &&
             items.map((item, index) =>
